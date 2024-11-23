@@ -29,7 +29,7 @@ const Categories = () => {
 
   return (
     <div className="mx-auto py-20 px-20 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-center mb-8">
         BROWSE BY PRODUCT CATEGORY
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">

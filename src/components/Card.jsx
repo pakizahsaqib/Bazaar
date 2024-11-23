@@ -2,31 +2,39 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 import { CartContext } from "../contexts/CartContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemActionCreator } from "../redux/cart/cartAction";
 
 const Card = (props) => {
-  const { cart, setCart } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.items);
+
+  //const { cart, setCart } = useContext(CartContext);
 
   const handleAddItem = (props) => {
     const foundItem = cart && cart.find((item) => item.id === props.id);
     if (foundItem) {
-      // If the item exists, increment its quantity
-      setCart(
-        cart.map((item) =>
-          item.id === props.id
-            ? {
-                ...item,
-                quantity: Number(item.quantity) + 1,
-              }
-            : item
+      dispatch(
+        addItemActionCreator(
+          cart.map((item) =>
+            item.id === props.id
+              ? {
+                  ...item,
+                  quantity: Number(item.quantity) + 1,
+                }
+              : item
+          )
         )
       );
     } else {
-      // Otherwise, add the item with initial quantity 1
-      setCart([
-        ...cart,
-        { ...props, size: "Large", color: "Black", quantity: 1 },
-      ]);
+      dispatch(
+        addItemActionCreator([
+          ...cart,
+          { ...props, size: "Large", color: "Black", quantity: 1 },
+        ])
+      );
     }
+    alert(`${props.title} has been added to the cart!`);
   };
 
   return (

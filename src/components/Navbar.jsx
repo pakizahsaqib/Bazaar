@@ -1,23 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { CartContext } from "../contexts/CartContext";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { cart } = useContext(CartContext);
-  console.log(cart.length);
+  const cart = useSelector((state) => state.cart.items);
   return (
     <nav className="w-full bg-white shadow-md">
       <div className="flex justify-between items-center px-6 py-4">
         <div className="flex items-center gap-6">
-          {/* Logo */}
           <h1 className="text-2xl font-bold text-gray-800">
             <Link to="/" className="hover:text-red-600">
               BAAZAAR
             </Link>
           </h1>
-
-          {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-6 text-gray-600">
             {[
               { path: "products", label: "Products" },
@@ -53,7 +49,7 @@ const Navbar = () => {
               }`}
             ></i>
           </button>
-          {/* Search and Icons */}
+
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-50 border border-gray-300 focus-within:ring-2 focus-within:ring-red-500">
               <i className="fa-solid fa-magnifying-glass text-gray-500 cursor-pointer"></i>
@@ -64,12 +60,12 @@ const Navbar = () => {
                 aria-label="Search products"
               />
             </div>
+
             <NavLink to={"/cart"}>
               <i
                 className="fa-solid fa-cart-shopping text-2xl cursor-pointer relative"
                 aria-label="Cart"
               >
-                {/* Badge */}
                 <span className="absolute -top-1 -right-1 flex items-center justify-center rounded-full h-5 w-5 bg-red-500 text-white font-medium text-xs">
                   {cart.reduce((sum, item) => sum + item.quantity, 0)}
                 </span>

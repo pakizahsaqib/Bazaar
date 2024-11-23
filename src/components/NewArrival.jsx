@@ -36,7 +36,7 @@ const NewArrival = () => {
 
   return (
     <div className="p-6 text-center bg-neutral-50">
-      <h2 className="text-2xl font-bold mb-6">NEW ARRIVALS</h2>
+      <h2 className="text-lg sm:text-2xl font-bold mb-6">NEW ARRIVALS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((product, index) => (
           <Link to={`/products/item/${product.id}`}>

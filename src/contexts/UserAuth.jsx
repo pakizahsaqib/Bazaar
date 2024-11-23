@@ -9,7 +9,6 @@ const UserAuthProvider = (props) => {
   const [name, setName] = useState("Admin");
   const [email, setEmail] = useState("admin@gmail.com");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log("UserAuth", isLoggedIn);
   return (
     // we can noe pass whatever value we want to pass on
     <UserAuthContext.Provider
