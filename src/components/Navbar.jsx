@@ -13,7 +13,7 @@ const Navbar = () => {
           {/* Logo */}
           <h1 className="text-2xl font-bold text-gray-800">
             <Link to="/" className="hover:text-red-600">
-              BAZAAR
+              BAAZAAR
             </Link>
           </h1>
 

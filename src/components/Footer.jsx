@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="py-10 px-6 md:px-12 lg:px-32 grid grid-cols-1 md:grid-cols-5 gap-6 text-neutral-700">
         {/* About Section */}
         <div className="col-span-2">
-          <h3 className="text-lg font-semibold mb-4">BAZAAR</h3>
+          <h3 className="text-lg font-semibold mb-4">BAAZAAR</h3>
           <p className="text-sm">
             We bring you the latest trends and timeless essentials, all in one
             place. Discover quality, style, and unbeatable deals for every
@@ -133,7 +133,7 @@ const Footer = () => {
 
       {/* Footer Bottom Section */}
       <div className="border-t py-6 px-6 text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-        <p>BAZAAR © 2024. All Rights Reserved</p>
+        <p>BAAZAAR © 2024. All Rights Reserved</p>
         <div className="flex items-center gap-4 mt-4 md:mt-0">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg"
